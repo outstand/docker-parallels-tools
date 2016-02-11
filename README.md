@@ -5,6 +5,7 @@ This docker container wraps the Parallels Desktop for Mac v11 Guest Tools and al
 ## Build
 
 Install Parallels Desktop for Mac v11 (or greater)
+
 Install Dapper: https://github.com/rancher/dapper
 
 Extract guest tools iso:
