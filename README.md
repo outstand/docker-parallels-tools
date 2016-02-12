@@ -63,3 +63,14 @@ parallels-tools:
     - /Users:/media/psf/Users:shared
   privileged: true
 ```
+
+## RancherOS Preload Workaround
+
+We run this container on Rancher's user-docker but I'd like to be able to preload it.  That's currently broken (latest check v0.4.3-rc4) but you can work around it:
+
+```sh
+sudo ros config set rancher.services.preload-user-images.image 'outstand/os-preload:v0.4.3-rc4'
+sudo reboot
+```
+
+I run these commands from a provisioning script that I scp over and execute via `docker-machine ssh`.
