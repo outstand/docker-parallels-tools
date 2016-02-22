@@ -3,11 +3,11 @@ set -e -x
 
 pushd $DAPPER_SOURCE
 
-echo 'Mounting parallels tools iso'
-mkdir -p /mnt/prl-tools-lin
-mount -t iso9660 -o loop prl-tools-lin.iso /mnt/prl-tools-lin
+echo 'Extracting iso'
+mkdir prl-tools-lin
+osirrox -indev ./prl-tools-lin.iso -extract / prl-tools-lin/
 
 echo 'Creating tarball'
-mkdir extracted
+mkdir -p extracted
 pushd extracted
-tar -C /mnt -cJf prl-tools-lin.tar.xz prl-tools-lin
+tar -C ../ -cJf prl-tools-lin.tar.xz prl-tools-lin

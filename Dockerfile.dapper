@@ -3,11 +3,11 @@ MAINTAINER Ryan Schlesinger <ryan@outstand.com>
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     xz-utils \
+    xorriso \
   && rm -rf /var/lib/apt/lists/*
 
 ENV DAPPER_SOURCE /source
 ENV DAPPER_OUTPUT ./extracted
-ENV DAPPER_RUN_ARGS --privileged
 WORKDIR ${DAPPER_SOURCE}
 
 COPY ./extract-iso.sh /usr/local/bin/
