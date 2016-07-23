@@ -1,6 +1,5 @@
 FROM buildpack-deps:jessie
 MAINTAINER Ryan Schlesinger <ryan@outstand.com>
-LABEL RUN="sudo system-docker run -d --privileged -v /usr/src:/usr/src -v /lib/modules:/lib/modules -v /Users:/media/psf/Users:shared outstand/parallels-tools"
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     dkms \
