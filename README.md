@@ -1,5 +1,9 @@
 # Parallels Guest Tools Docker Container
 
+[![](https://images.microbadger.com/badges/image/outstand/parallels-tools.svg)](http://microbadger.com/images/outstand/parallels-tools "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/outstand/parallels-tools.svg)](http://microbadger.com/images/outstand/parallels-tools "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/commit/outstand/parallels-tools.svg)](http://microbadger.com/images/outstand/parallels-tools "Get your own commit badge on microbadger.com")
+
 This docker container wraps the Parallels Desktop for Mac v11 Guest Tools and allows you to run them easily on RancherOS.  Presumably this would work well on other guest OSes but those are untested.
 
 ## Build
@@ -8,14 +12,9 @@ Install Parallels Desktop for Mac v11 (or greater)
 
 Install Dapper: https://github.com/rancher/dapper
 
-Extract guest tools iso:
+Extract guest tools iso and build image:
 ```sh
-./build.sh
-```
-
-Build container image:
-```sh
-docker build -t outstand/parallels-tools .
+./build.sh <IMAGE TAG>
 ```
 
 ## Using
