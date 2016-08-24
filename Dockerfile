@@ -15,6 +15,5 @@ LABEL org.label-schema.vcs-ref=$VCS_REF \
 COPY ./extracted/prl-tools-lin.tar.xz /
 
 COPY ./entrypoint.sh /
-ENV DUMB_INIT_SETSID 0
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["start"]
