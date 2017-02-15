@@ -5,7 +5,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     dkms \
   && rm -rf /var/lib/apt/lists/*
 
-RUN wget https://github.com/Yelp/dumb-init/releases/download/v1.1.3/dumb-init_1.1.3_amd64.deb
+ENV DUMB_INIT_VERSION 1.2.0
+RUN wget https://github.com/Yelp/dumb-init/releases/download/v${DUMB_INIT_VERSION}/dumb-init_${DUMB_INIT_VERSION}_amd64.deb
 RUN dpkg -i dumb-init_*.deb
 
 ARG VCS_REF
