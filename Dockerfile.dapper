@@ -1,4 +1,4 @@
-FROM buildpack-deps:jessie-curl
+FROM buildpack-deps:curl
 MAINTAINER Ryan Schlesinger <ryan@outstand.com>
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
