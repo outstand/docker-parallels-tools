@@ -3,6 +3,7 @@ MAINTAINER Ryan Schlesinger <ryan@outstand.com>
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     dkms \
+    bash \
   && rm -rf /var/lib/apt/lists/*
 
 ENV DUMB_INIT_VERSION 1.2.0
@@ -15,6 +16,6 @@ LABEL org.label-schema.vcs-ref=$VCS_REF \
 
 COPY ./extracted/prl-tools-lin.tar.xz /
 
-COPY ./entrypoint.sh /
-ENTRYPOINT ["/entrypoint.sh"]
+COPY ./docker-entrypoint.sh /
+ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["start"]
