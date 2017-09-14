@@ -4,7 +4,7 @@
 [![](https://images.microbadger.com/badges/version/outstand/parallels-tools.svg)](http://microbadger.com/images/outstand/parallels-tools "Get your own version badge on microbadger.com")
 [![](https://images.microbadger.com/badges/commit/outstand/parallels-tools.svg)](http://microbadger.com/images/outstand/parallels-tools "Get your own commit badge on microbadger.com")
 
-This docker container wraps the Parallels Desktop for Mac v11 Guest Tools and allows you to run them easily on RancherOS.  Presumably this would work well on other guest OSes but those are untested.
+This docker container wraps the Parallels Desktop for Mac Guest Tools and allows you to run them easily on RancherOS.  Presumably this would work well on other guest OSes but those are untested.
 
 ## Build
 
@@ -21,11 +21,11 @@ Extract guest tools iso and build image:
 
 This container relies on a shared mount point to be able to mount the shared folder(s) in the host.  This feature requires docker v1.10.0 or greater. These examples will use `/Users`.
 
-Start the docker host (needs v0.4.3 or newer RancherOS for docker v1.10.0):
+Start the docker host
 ```sh
 docker-machine create --driver=parallels \
   --parallels-memory=2048 \
-  --parallels-boot2docker-url https://github.com/rancher/os/releases/download/v0.4.3-rc3/rancheros.iso \
+  --parallels-boot2docker-url https://github.com/rancher/os/releases/download/v1.1.0/rancheros.iso \
   default
 ```
 
@@ -54,7 +54,7 @@ parallels-tools:
   restart: always
   labels:
     - io.rancher.os.remove=false
-  container_name: parallels-tools
+    - io.rancher.os.after=kernel-headers
   volumes:
     - /usr/src:/usr/src
     - /lib/modules:/lib/modules
