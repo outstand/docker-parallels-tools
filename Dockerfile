@@ -8,6 +8,7 @@ COPY --from=tini /sbin/tini /sbin/
 RUN apt-get update && apt-get install -y --no-install-recommends \
     dkms \
     bash \
+    libelf-dev \
   && rm -rf /var/lib/apt/lists/*
 
 ARG VCS_REF
