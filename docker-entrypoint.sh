@@ -18,12 +18,6 @@ if [ "$1" = 'start' ]; then
   tar -Jxf prl-tools-lin.tar.xz
   cd prl-tools-lin
 
-  echo "Applying objtool workaround"
-  pushd installer
-  sed -i 's/make -C "$KMOD_DIR" -f Makefile.kmods/make -C "$KMOD_DIR" -f Makefile.kmods CONFIG_STACK_VALIDATION=/' install-kmods.sh
-  popd
-  echo "Done with workaround"
-
   ./install --install-unattended --verbose
 
   while true; do sleep 1000; done
