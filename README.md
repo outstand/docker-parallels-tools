@@ -58,6 +58,5 @@ parallels-tools:
   volumes:
     - /usr/src:/usr/src
     - /lib/modules:/lib/modules
-    - /Users:/media/psf/Users:shared
   privileged: true
 ```
